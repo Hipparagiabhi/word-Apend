@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+.container{
+    margin-top:300px;
+    display: flex;
+    flex-direction: row;  
+    justify-content: center;
+    align-items: center;
+    }
+.box{
+    width: 200px;
+    height:50px;
+    font-size: larger;
+    font-weight: bolder;
+    text-align: center;
+    background: yellow;
+}
+
+.test2{
+        background: indigo;
+        color:orangered; 
+        margin-top: 20px; 
+        font-size:larger;
+        font-weight: bolder;
+        }
+
+.button{
+    width: 150px;
+        height:50px;
+        background: orange;
+        color:red;
+        border-radius: 20px;
+        font-weight: bolder;
+}
+.container-fluid{
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;   
+}
+
+
+</style>
+<body>
+<div class="container">
+    <input class="box" type="text" id="string"  > <br><br>
+</div>
+<div class="container-fluid">
+    <button class="button" type="button" id="btn" >Apend</button>
+    <button class="button" type="button" id="btn1">Reverse</button>
+    <button  class="button" onClick="window.location.reload();">Try me</button>
+</div>
+
+<div class="container1">
+    <div id="demo1" class="test2" style="text-align: center;" ></div>
+    <div id="demo2" class="test2" style="text-align: center;"></div>
+</div>
+
+ 
+
+    <script>
+
+        //  let inputbox=document.getElementById("string").value;
+        //  document.getElementById("demo3").innerHTML = inputbox;
+         let apendbutton=document.getElementById("btn");
+         let reversebutton=document.getElementById("btn1");
+         let result=document.getElementById("demo1");
+         let result1=document.getElementById("demo2");
+
+
+ apendbutton.onclick=apend;
+ reversebutton.onclick=reverse;
+
+
+ function apend() {
+
+let inputbox=document.getElementById("string").value;
+        
+
+//         // forward key//
+ let f= inputbox;
+
+ console.log(f.length);
+
+ let e=f.slice(f.length-1) ;
+
+// //  let e=f.charAt(4);
+
+ console.log(e);
+
+// // let z=f.slice(f.length-1) ;
+
+  let z=f.substring(0, f.length - 1);
+
+ console.log(z);
+
+ let g= e.concat(z);
+
+ console.log(g);
+
+//  inputbox.innerHTML= (g);
+
+document.getElementById("string").value=g;
+
+// if(f==g){
+
+//     console.log("1 time");
+// }
+
+
+
+
+ result.innerHTML= ` Word ${g} Apended`;
+
+
+ }
+
+
+ function reverse() {
+
+     let inputbox=document.getElementById("string").value;
+    
+
+
+
+//back word key//
+
+  let q= inputbox;
+
+  console.log(q.length);
+
+//   let n= q.substring(0,q.length-4);
+
+  let n= q.charAt(0);
+
+ console.log(n);
+
+
+ let m=q.substring(1);
+
+//   let m=q.slice(q.length-4);
+
+
+
+ console.log(m);
+
+ let j= m.concat(n);
+
+ console.log(j);
+
+ document.getElementById("string").value=j;
+
+ result1.innerHTML= ` Word ${j} reversed`;
+
+ }
+
+
+
+
+
+
+
+//  let i=0;
+
+//  while(i<f.length){
+
+
+
+// //     let s=(f[4]);
+
+// //     console.log(s);
+
+//         console.log(f[f.length-i-1]);
+//         // i++;
+//         // }
+
+//     //  let w=f.slice(f[f.length-i-1]);
+
+//     //  console.log(w);
+
+
+ 
+
+    </script>
+        
+</body>
+</html>
